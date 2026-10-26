@@ -9,8 +9,8 @@ from app.database import get_db
 router = APIRouter(prefix="/estacionamentos", tags=["estacionamentos"])
 
 
-def buscar_ou_404(db: Session, estacionamento_id: int) -> models.Estacionamento:
-    obj = db.get(models.Estacionamento, estacionamento_id)
+def buscar_ou_404(db: Session, estacionamento_id: int) -> models.estacionamento:
+    obj = db.get(models.estacionamento, estacionamento_id)
     if obj is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Estacionamento não encontrado")
     return obj

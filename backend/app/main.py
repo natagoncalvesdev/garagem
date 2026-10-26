@@ -10,3 +10,4 @@ from app.routers import estacionamentos
 app = FastAPI(title="Garagem")
 
 app.include_router(estacionamentos.router)
+app.include_router(vagas.router)
